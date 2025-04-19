@@ -1,5 +1,7 @@
 #include "server.h"
 
+#define CICLOS 1
+
 int main(void) {
 	logger = log_create("log.log", "Servidor", 1, LOG_LEVEL_DEBUG);
 
@@ -8,7 +10,7 @@ int main(void) {
 	int cliente_fd = esperar_cliente(server_fd);
 
 	t_list* lista;
-	while (1) {
+	while (CICLOS) {
 		int cod_op = recibir_operacion(cliente_fd);
 		switch (cod_op) {
 		case MENSAJE:

@@ -13,6 +13,7 @@
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
+      "miDebuggerArgs": "-q -ex quit; wait() { fg >/dev/null; }; /bin/gdb -q --interpreter=mi",
       "linux": {
         "MIMode": "gdb"
       },
