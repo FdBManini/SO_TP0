@@ -1,7 +1,6 @@
 #include "client.h"
 
-int main(void)
-{
+int main(void){
 	/*---------------------------------------------------PARTE 2-------------------------------------------------------------*/
 
 	int conexion;
@@ -59,8 +58,7 @@ int main(void)
 	printf("Pinchó cliente\n");
 }
 
-t_log* iniciar_logger(void)
-{
+t_log* iniciar_logger(void){
 	
 	t_log* nuevo_logger = log_create("tp0_logs.log","LOGER_TP0",1,LOG_LEVEL_INFO);
 	if (nuevo_logger == NULL){
@@ -82,8 +80,7 @@ t_config* iniciar_config(void)
 	return nuevo_config;
 }
 
-void leer_consola(t_log* logger)
-{
+void leer_consola(t_log* logger){
 	char* leido;
 
 	// La primera te la dejo de yapa
@@ -101,8 +98,7 @@ void leer_consola(t_log* logger)
 
 }
 
-void paquete(int conexion)
-{
+void paquete(int conexion){
 	// Ahora toca lo divertido!
 	char* leido;
 	t_paquete* paquete = crear_paquete();
@@ -123,8 +119,7 @@ void paquete(int conexion)
 	eliminar_paquete(paquete);
 }
 
-void terminar_programa(int conexion, t_log* logger, t_config* config)
-{
+void terminar_programa(int conexion, t_log* logger, t_config* config){
 	/* Y por ultimo, hay que liberar lo que utilizamos (conexion, log y config) 
 	  con las funciones de las commons y del TP mencionadas en el enunciado */
 	  liberar_conexion(conexion);
